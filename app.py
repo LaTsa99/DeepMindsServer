@@ -8,10 +8,11 @@ import numpy as np
 
 UPLOAD_FOLDER = '.'
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg'}
+DRIVE_LINK = '' # Censored for github
 
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
-gdown.cached_download('https://drive.google.com/u/0/uc?export=download&confirm=Moxk&id=1lJ9tPyfO2IJ0OwlfSUEnqq-3l2KfSd_F', 'model.hdf5')
+gdown.cached_download(DRIVE_LINK, 'model.hdf5')
 model = load_model('model.hdf5')
 
 def allowed_file(filename):
